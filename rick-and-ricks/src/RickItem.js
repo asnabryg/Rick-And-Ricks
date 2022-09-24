@@ -1,6 +1,6 @@
-import { Flex, Heading, Img } from "@chakra-ui/react";
-import React from "react";
-import InfoPair from "./InfoPair";
+import { Flex, Heading, Img } from '@chakra-ui/react'
+import React from 'react'
+import InfoPair from './InfoPair'
 
 const RickItem = ({ rick }) => {
   console.log('rick', rick)
@@ -24,11 +24,11 @@ const RickItem = ({ rick }) => {
           title="Status"
           value={rick.status}
           color={
-            rick.status === "Alive"
-              ? "green"
-              : rick.status === "Dead"
-              ? "red"
-              : "orange"
+            rick.status === 'Alive'
+              ? 'green'
+              : rick.status === 'Dead'
+                ? 'red'
+                : 'orange'
           }
         />
         <InfoPair title="Gender" value={rick.gender} />
@@ -36,17 +36,17 @@ const RickItem = ({ rick }) => {
         <InfoPair
           title="Origin"
           value={rick.origin.name}
-          color={rick.origin.name !== "unknown" ? "black" : "orange"}
+          color={rick.origin.name !== 'unknown' ? 'black' : 'orange'}
         />
         <InfoPair
           title="Appeared in"
           value={`${rick.episode.length} episode${
-            rick.episode.length !== 1 ? "s" : ""
+            rick.episode.length !== 1 ? 's' : ''
           }`}
         />
       </Flex>
     </Flex>
-  );
-};
+  )
+}
 
-export default RickItem;
+export default RickItem
