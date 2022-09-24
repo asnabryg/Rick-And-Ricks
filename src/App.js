@@ -59,7 +59,7 @@ function App() {
           <Heading fontSize="80px" my="20px">
           Rick and Ricks
           </Heading>
-          <Text mb="34px">v0.0.1</Text>
+          <Text mb="34px">0.0.1</Text>
         </Flex>
         <Flex
           gap="10px"
