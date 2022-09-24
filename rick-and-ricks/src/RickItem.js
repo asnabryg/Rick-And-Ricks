@@ -3,6 +3,7 @@ import React from "react";
 import InfoPair from "./InfoPair";
 
 const RickItem = ({ rick }) => {
+  console.log('rick', rick)
   return (
     <Flex
       bg="white"
