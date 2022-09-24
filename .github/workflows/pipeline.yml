@@ -42,7 +42,7 @@ jobs:
           heroku_app_name: rick-and-ricks
           heroku_email: 8mixu8@gmail.com
           healthcheck: 'https://rick-and-ricks.herokuapp.com'
-          delay: 5
+          delay: 10
           rollbackonhealthcheckfailed: true
       
       - uses: actions/checkout@v2
