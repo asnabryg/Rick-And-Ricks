@@ -55,9 +55,12 @@ function App() {
         align="center"
         pb="80px"
       >
-        <Heading fontSize="80px" my="20px">
+        <Flex align="end">
+          <Heading fontSize="80px" my="20px">
           Rick and Ricks
-        </Heading>
+          </Heading>
+          <Text mb="34px">v1.0</Text>
+        </Flex>
         <Flex
           gap="10px"
           align="center"
