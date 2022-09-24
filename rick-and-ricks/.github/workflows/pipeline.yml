@@ -1,0 +1,35 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches: [master]
+    type: [opened, synchronize]
+
+jobs:
+  deployment_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      
+      - name: yarn install
+        run: yarn install
+
+      - name: lint
+        run: yarn lint
+
+      - name: test
+        run: yarn test
+      
+      - name: e2e test
+        uses: cypress-io/github-action@v4
+        with:
+          command: yarn test:e2e
+          start: yarn start
+          wait-on: http://localhost:3000
