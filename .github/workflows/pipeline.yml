@@ -36,7 +36,7 @@ jobs:
       
       - name: deploy to heroku
         if: ${{ github.event_name == 'push' }}
-        uses: akhileshns/heroku-deploy@v3.7.8
+        uses: akhileshns/heroku-deploy@v3.12.12
         with: 
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: rick-and-ricks
@@ -44,3 +44,12 @@ jobs:
           healthcheck: 'https://rick-and-ricks.herokuapp.com'
           delay: 5
           rollbackonhealthcheckfailed: true
+      
+      - uses: actions/checkout@v2
+      - name: Bump version and push tag
+        if: ${{ github.event_name == 'push' }}
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
+          DRY_RUN: true
